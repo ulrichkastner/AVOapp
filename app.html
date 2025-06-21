@@ -1,14 +1,139 @@
 <!DOCTYPE html>
 <html lang="de">
+<!--<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AVO – Deine Begleit-App</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/icons/avo-icon-192.png" />
+  <link rel="manifest" href="/manifest.json" />
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/js/sw.js')
+      .then(function(registration) {
+        console.log('ServiceWorker registered: ', registration);
+      }).catch(function(error) {
+        console.log('ServiceWorker registration failed: ', error);
+      });
+  }
+</script>
+
+</head>-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVOapp</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AVO – Deine Begleit-App</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/icons/avo-icon-192.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/js/sw.js')
+      .then(function(registration) {
+        console.log('ServiceWorker registered: ', registration);
+      }).catch(function(error) {
+        console.log('ServiceWorker registration failed: ', error);
+      });
+  }
+</script>
+
 </head>
 <body>
-    <h1>Willkommen bei AVOapp</h1>
-    <p>Dies ist die Startseite deiner Web-App zur Krisenbewältigung.</p>
-    <script src="script.js"></script>
+  <div class="app-wrapper">
+
+    <!-- Header mit Begrüßung und Avatar -->
+    <header class="app-header">
+      <div class="greeting">Hello Käfer</div>
+      <div class="avatar">
+        <img src="assets/images/avatar.jpg" alt="Avatar" />
+      </div>
+    </header>
+
+    <!-- Kachelbereich -->
+    <main class="module-overview">
+      <section class="module-grid">
+        <a href="modules/screening.html" class="module-tile blue">
+          <img src="assets/icons/screening-icon.png" alt="Screening Icon" />
+          <span>Screening</span>
+        </a>
+        <a href="modules/safetyplan.html" class="module-tile red">
+          <img src="assets/icons/safety-icon.png" alt="Safety Plan Icon" />
+          <span>Safety Plan</span>
+        </a>
+        <a href="modules/distresscurve.html" class="module-tile green">
+          <img src="assets/icons/distress-icon.png" alt="Distress Icon" />
+          <span>Distress-Kurve</span>
+        </a>
+        <a href="modules/tips-tools.html" class="module-tile yellow">
+          <img src="assets/icons/tipps-icon.png" alt="Tipps Icon" />
+          <span>Tipps & Tools</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- Impulse-Bereich -->
+    <section class="impulse-section">
+      <div class="impulse-header">
+        <h2>Impulse</h2>
+        <a href="modules/ki-assistenz.html" class="ki-button">KI-Hilfe starten</a>
+      </div>
+
+      <div class="impulse-list">
+        <div class="impulse-item">
+            <div class="video-thumbnail">
+            <img src="assets/images/impulse1.jpg" alt="Gründe fürs Leben" />
+            <div class="play-button">▶</div>
+          </div>
+          <p class="impulse-title">Gründe fürs Leben</p>
+        </div>
+
+        <div class="impulse-item">
+          <div class="video-thumbnail">
+            <img src="assets/images/impulse2.jpg" alt="Situationen sicherer machen" />
+            <div class="play-button">▶</div>
+          </div>
+          <p class="impulse-title">Situationen sicherer machen</p>
+        </div>
+        <div class="impulse-item">
+          <div class="video-thumbnail">
+            <img src="assets/images/impulse1.jpg" alt="Gründe fürs Leben" />
+            <div class="play-button">▶</div>
+          </div>
+          <p class="impulse-title">Gründe fürs Leben</p>
+        </div>
+
+        <div class="impulse-item">
+          <div class="video-thumbnail">
+            <img src="assets/images/impulse2.jpg" alt="Situationen sicherer machen" />
+            <div class="play-button">▶</div>
+          </div>
+          <p class="impulse-title">Situationen sicherer machen</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer Navigation -->
+    <footer class="footer-nav">
+      <a href="modules/search.html" class="nav-item">
+        <img src="assets/icons/search-inactive.png" alt="Search" />
+      </a>
+      <a href="index.html" class="nav-item active">
+        <img src="assets/icons/home-active.png" alt="Home" />
+      </a>
+      <a href="modules/add.html" class="nav-item">
+        <img src="assets/icons/plus-inactive.png" alt="Add" />
+      </a>
+      <a href="modules/suggestions.html" class="nav-item">
+        <img src="assets/icons/suggestion-inactive.png" alt="Suggestions" />
+      </a>
+      <a href="modules/settings.html" class="nav-item">
+        <img src="assets/icons/settings-inactive.png" alt="Settings" />
+      </a>
+    </footer>
+<!-- header und footer -->
+
+<script src="js/inject-shared.js"></script>
+
 </body>
 </html>

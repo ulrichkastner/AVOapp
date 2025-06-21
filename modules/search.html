@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AVO – Template</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/icons/avo-icon-192.png" />
+ <style>
+</style>
+</head>
+<body>
+  <div class="app-wrapper">
+     <div class="header-placeholder"></div>
+    <!-- Header mit Begrüßung und Avatar
+    <header class="app-header">
+      <div class="greeting">Hello Käfer</div>
+      <div class="avatar">
+        <img src="../assets/images/avatar.jpg" alt="Avatar" />
+      </div>
+    </header>-->
+
+    <!-- Kachelbereich -->
+     <main class="module-overview">
+      <section class="module-grid">
+    <!-- Kacheln-->    
+      </section>
+    </main>
+
+      <!-- Impulse-Bereich -->
+    <section class="impulse-section">
+
+      <div class="impulse-list">
+        <div class="impulse-item">
+            <h2>Suche</h2>
+          <div class="video-thumbnail">
+            <img src="../assets/images/impulse1.jpg" alt="Gründe fürs Leben" />
+            <div class="play-button">▶</div>
+          </div>
+  <p>
+    Suchfunktion ...
+  </p>
+       <!-- Suchbereich -->
+    <main class="module-content">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Begriff eingeben..."
+        style="width: 90%; padding: 10px; margin-bottom: 1rem; font-size: 16px;"
+      />
+      <div id="searchResults"></div>
+    </main>
+      </div>
+    </section>
+     
+        <div class="footer-placeholder"></div>
+    
+    <!-- Footer Navigation
+    <footer class="footer-nav">
+      <a href="search.html" class="nav-item">
+        <img src="../assets/icons/search-inactive.png" alt="Search" />
+      </a>
+      <a href="../index.html" class="nav-item active">
+        <img src="../assets/icons/home-active.png" alt="Home" />
+      </a>
+      <a href="add.html" class="nav-item">
+        <img src="../assets/icons/plus-inactive.png" alt="Add" />
+      </a>
+      <a href="suggestions.html" class="nav-item">
+        <img src="../assets/icons/suggestion-inactive.png" alt="Suggestions" />
+      </a>
+      <a href="settings.html" class="nav-item">
+        <img src="../assets/icons/settings-inactive.png" alt="Settings" />
+      </a>
+    </footer>-->
+
+  </div>
+    <script src="../js/inject-shared.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const daten = [
+    {
+      titel: "Safety Plan",
+      beschreibung: "Notfallplan mit 6 Schritten zur Selbstsicherung.",
+      link: "/modules/safetyplan.html"
+    },
+    {
+      titel: "Skills: Kälte",
+      beschreibung: "Eiswürfel, kaltes Wasser, Cold Pack",
+      link: "/modules/skills.html"
+    },
+    {
+      titel: "Skills: Bewegung",
+      beschreibung: "Bewegung als Spannungsabbau: Joggen, Dehnen, Boxen",
+      link: "/modules/skills.html"
+    },
+    {
+      titel: "Distress-Kurve",
+      beschreibung: "Verlauf von Anspannung erfassen und visualisieren.",
+      link: "/modules/distresscurve.html"
+    },
+    {
+      titel: "Tipps & Tools",
+      beschreibung: "Hilfreiches Material und Selbsthilfestrategien",
+      link: "/modules/tips-tools.html"
+    }
+  ];
+
+  const input = document.getElementById("searchInput");
+  const button = document.getElementById("searchButton");
+  const ergebnisse = document.getElementById("searchResults");
+
+  function suche() {
+    const begriff = input.value.toLowerCase();
+    const gefiltert = daten.filter(item =>
+      item.titel.toLowerCase().includes(begriff) ||
+      item.beschreibung.toLowerCase().includes(begriff)
+    );
+
+    ergebnisse.innerHTML = gefiltert.length
+      ? "<ul>" + gefiltert.map(i =>
+          `<li style="margin-bottom:1rem;">
+            <a href="${i.link}" style="font-weight:bold;">${i.titel}</a><br>
+            <span>${i.beschreibung}</span>
+          </li>`
+        ).join("") + "</ul>"
+      : "<p>Keine Treffer.</p>";
+  }
+
+  input.addEventListener("input", suche);
+  button.addEventListener("click", suche);
+});
+</script>
+
+</body>
+</html>

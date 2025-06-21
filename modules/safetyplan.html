@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AVO – Safety Plan</title>
+
+  <!-- bleibt erhalten -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="/assets/icons/avo-icon-192.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- 🆕 Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/js/sw.js')
+        .then(reg => console.log('✅ Service Worker registriert:', reg.scope))
+        .catch(err => console.warn('❌ Fehler bei SW:', err));
+    }
+  </script>
+</head>
+
+<body>
+  <div class="app-wrapper">
+
+    <!-- 🔁 Header ersetzt -->
+    <div class="header-placeholder"></div>
+    <!-- 🗑️ ALT: 
+    <header class="app-header">
+      <div class="greeting">Hello Käfer</div>
+      <div class="avatar">
+        <img src="../assets/images/avatar.jpg" alt="Avatar" />
+      </div>
+    </header>
+    -->
+
+    <!-- Kachelbereich -->
+    <main class="module-overview">
+      <section class="module-grid">
+
+        <!-- Unterkacheln Safetyplan -->
+        <a href="safety/warning.html" class="module-tile red">
+          <span>Warnzeichen</span>
+        </a>
+        <a href="safety/strategies.html" class="module-tile yellow">
+          <span>Strategien</span>
+        </a>
+        <a href="safety/distraction.html" class="module-tile green">
+          <span>Ablenken</span>
+        </a>
+        <a href="safety/support.html" class="module-tile green">
+          <span>Support</span>
+        </a>
+        <a href="safety/professional.html" class="module-tile red">
+          <span>Professionelle Hilfe</span>
+        </a>
+        <a href="safety/enviroment.html" class="module-tile yellow">
+          <span>Umgebung</span>
+        </a>
+
+      </section>
+    </main>
+
+    <!-- Impulse-Bereich -->
+    <section class="impulse-section">
+      <div class="impulse-list">
+        <div class="impulse-item">
+          <h2>Safety Plan</h2>
+          <div class="video-thumbnail">
+            <img src="/assets/images/impulse1.jpg" alt="Gründe fürs Leben" />
+            <div class="play-button">▶</div>
+          </div>
+
+          <h2>Jetzt sicher bleiben</h2>
+          <p>Ein Safety-Plan enthält, was du in einer Krise tun würdest und wer dich dabei unterstützen könnte. Er kann beinhalten:</p>
+          <ul>
+            <li>Ablenkungstechniken, um überwältigende Momente zu überstehen</li>
+            <li>Schritte, um deine unmittelbare Umgebung oder Situation sicherer zu machen</li>
+            <li>Personen, die du kontaktieren kannst, wenn es dir sehr schlecht geht</li>
+            <li>Maßnahmen, die du im Notfall ergreifen solltest</li>
+          </ul>
+
+          <h3>Krisenmoment</h3>
+          <p>Erstelle deinen Safety-Plan <strong>bevor</strong> du in eine Krise gerätst...</p>
+
+          <h3>Um Hilfe bitten</h3>
+          <p>Bitte jemanden, dir beim Erstellen deines Plans zu helfen...</p>
+
+          <h3>Dein Plan</h3>
+          <p>Ein Safety-Plan muss zu <strong>dir</strong> gehören...</p>
+
+          <h3>Praktisches Werkzeug</h3>
+          <p>Ein Safety-Plan ist ein praktisches Werkzeug...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔁 Footer ersetzt -->
+    <div class="footer-placeholder"></div>
+    <!-- 🗑️ ALT:
+    <footer class="footer-nav">
+      ...
+    </footer>
+    -->
+
+  </div>
+
+  <!-- 🆕 JS für Header/Footer -->
+  <script src="../js/inject-shared.js"></script>
+</body>
+</html>

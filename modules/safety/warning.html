@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVO – Warnzeichen</title>
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/assets/icons/avo-icon-192.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/js/sw.js')
+        .then(reg => console.log('✅ SW registriert:', reg.scope))
+        .catch(err => console.warn('❌ Fehler:', err));
+    }
+  </script>
+</head>
+
+<body>
+  <div class="app-wrapper">
+
+    <!-- Header -->
+  <div class="header-placeholder"></div>
+
+    <!-- Hauptinhalt mit Swipe-Attributen -->
+    <main class="module-content" id="swipe-area"
+          data-prev="../safetyplan.html"
+          data-next="strategies.html">
+
+      <h2>Meine Warnzeichen</h2>
+      <p>Diese Warnzeichen helfen dir, erste Anzeichen einer Krise frühzeitig zu erkennen.</p>
+
+      <ul id="warningList"></ul>
+
+      <form id="warningForm" class="warning-form">
+        <input type="text" id="newWarning" placeholder="Neues Warnzeichen eingeben…" maxlength="100" />
+        <button type="submit">Hinzufügen</button>
+      </form>
+    </main>
+
+    <!-- Footer -->
+   <div class="footer-placeholder"></div>
+  </div>
+
+  <script src="/js/inject-shared.js"></script>
+  <script src="/js/swipe-nav.js"></script>
+
+  <script>
+    const MAX_WARNINGS = 3;
+
+    function loadWarnings() {
+      const list = document.getElementById("warningList");
+      list.innerHTML = "";
+      const warnings = JSON.parse(localStorage.getItem("avoWarnings")) || [];
+
+      warnings.forEach((text, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span>${text}</span>
+          <button title="Bearbeiten" onclick="editWarning(${index})">✏️</button>
+          <button title="Löschen" onclick="deleteWarning(${index})">🗑️</button>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    function saveWarnings(warnings) {
+      localStorage.setItem("avoWarnings", JSON.stringify(warnings));
+      loadWarnings();
+    }
+
+    function editWarning(index) {
+      const warnings = JSON.parse(localStorage.getItem("avoWarnings")) || [];
+      const updated = prompt("Neues Warnzeichen eingeben:", warnings[index]);
+      if (updated && updated.trim()) {
+        warnings[index] = updated.trim();
+        saveWarnings(warnings);
+      }
+    }
+
+    function deleteWarning(index) {
+      const warnings = JSON.parse(localStorage.getItem("avoWarnings")) || [];
+      warnings.splice(index, 1);
+      saveWarnings(warnings);
+    }
+
+    document.getElementById("warningForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const input = document.getElementById("newWarning");
+      const value = input.value.trim();
+      if (!value) return;
+
+      const warnings = JSON.parse(localStorage.getItem("avoWarnings")) || [];
+      if (warnings.length >= MAX_WARNINGS) {
+        alert("Maximal 3 Warnzeichen erlaubt.");
+        return;
+      }
+
+      warnings.push(value);
+      saveWarnings(warnings);
+      input.value = "";
+    });
+
+    document.addEventListener("DOMContentLoaded", loadWarnings);
+  </script>
+</body>
+</html>

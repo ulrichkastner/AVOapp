@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AVO – Template</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/icons/avo-icon-192.png" />
+ <style>
+    .accordion-section {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .accordion-header {
+      font-weight: bold;
+      padding: 0.75rem;
+      cursor: pointer;
+      background-color: #eee;
+      border-radius: 5px;
+    }
+
+    .accordion-header:hover {
+      background-color: #ddd;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0.5rem 1rem;
+      background-color: #f9f9f9;
+    }
+
+    .accordion-content ul {
+      padding-left: 1.2rem;
+    }
+
+    .accordion-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .accordion-header.open {
+      background-color: #dceeff;
+    }
+    .accordion-header::after {
+  content: '▶';
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.open::after {
+  transform: rotate(90deg); /* Pfeil nach unten */
+}
+
+</style>
+</head>
+<body>
+  <div class="app-wrapper">
+
+    <!-- Header mit Begrüßung und Avatar
+    <header class="app-header">
+      <div class="greeting">Hello Käfer</div>
+      <div class="avatar">
+        <img src="../assets/images/avatar.jpg" alt="Avatar" />
+      </div>
+    </header>-->
+         <div class="header-placeholder"></div>
+
+    <!-- Kachelbereich -->
+     <main class="module-overview">
+      <section class="module-grid">
+    <!-- Kacheln-->    
+      </section>
+    </main>
+
+      <!-- Impulse-Bereich -->
+    <section class="impulse-section">
+
+      <div class="impulse-list">
+        <div class="impulse-item">
+            <h2>Skills</h2>
+          <div class="video-thumbnail">
+            <img src="../assets/images/impulse1.jpg" alt="Gründe fürs Leben" />
+            <div class="play-button">▶</div>
+          </div>
+  <!-- Akkordeonbereich
+    <main class="module-content">
+      <div class="accordion-section">
+        <div class="accordion-header">Kalte Reize</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Eiswürfel in der Hand oder am Arm</li>
+            <li>Kaltes Wasser über die Unterarme laufen lassen</li>
+            <li>Kühlakku an die Stirn</li>
+            <li>Kalt duschen</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-header">Bewegung</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Schnelles Gehen oder Treppensteigen</li>
+            <li>Hampelmänner oder Kniebeugen</li>
+            <li>Boxen in ein Kissen</li>
+            <li>Radfahren oder Joggen</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-section">
+        <div class="accordion-header">Scharfe Reize</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Scharfen Kaugummi kauen</li>
+            <li>Chili-Tropfen auf die Zunge</li>
+            <li>Essig riechen</li>
+          </ul>
+        </div>
+      </div>
+    </main>      -->
+    <main class="module-content">
+
+  <div class="accordion-section">
+    <div class="accordion-header">1. Achtsamkeit (Mindfulness)</div>
+    <div class="accordion-content">
+      <p><strong>Ziel:</strong> Im Moment präsent sein und bewusst entscheiden können.</p>
+      <p><strong>Was-Fertigkeiten:</strong></p>
+      <ul>
+        <li>Beobachten</li>
+        <li>Beschreiben</li>
+        <li>Teilnehmen</li>
+      </ul>
+      <p><strong>Wie-Fertigkeiten:</strong></p>
+      <ul>
+        <li>Nicht-bewertend</li>
+        <li>Konzentriert</li>
+        <li>Wirksam (effektiv)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">2. Stresstoleranz</div>
+    <div class="accordion-content">
+      <p><strong>Ziel:</strong> Krisen aushalten, ohne sie zu verschlimmern.</p>
+      <p><strong>Kurzfristige Notfall-Skills:</strong></p>
+      <ul>
+        <li>Temperaturwechsel (z. B. kaltes Wasser, Eiswürfel)</li>
+        <li>Intensive körperliche Aktivität (z. B. Seilspringen)</li>
+        <li>Muskelentspannung (z. B. progressive Relaxation)</li>
+        <li>Atmung (z. B. 4-7-8 Atmung)</li>
+      </ul>
+      <p><strong>„ACCEPTS“ Skills (Ablenkung):</strong></p>
+      <ul>
+        <li>Aktivitäten</li>
+        <li>Caring for others</li>
+        <li>Comparisons (Vergleiche)</li>
+        <li>Emotions hervorrufen</li>
+        <li>Pushing away (wegschieben)</li>
+        <li>Thoughts ablenken</li>
+        <li>Sensations erzeugen</li>
+      </ul>
+      <p><strong>Selbstberuhigung über Sinne:</strong></p>
+      <ul>
+        <li>Sehen: beruhigende Bilder</li>
+        <li>Hören: Musik</li>
+        <li>Riechen: Aromaöl</li>
+        <li>Schmecken: Tee, Bonbon</li>
+        <li>Tasten: warme Decke</li>
+      </ul>
+      <p><strong>Radikale Akzeptanz:</strong></p>
+      <ul>
+        <li>Realität annehmen ohne Widerstand</li>
+        <li>“Es ist wie es ist”</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">3. Emotionsregulation</div>
+    <div class="accordion-content">
+      <p><strong>Ziel:</strong> Gefühle besser verstehen, benennen und beeinflussen.</p>
+      <ul>
+        <li>Gefühle erkennen und benennen</li>
+        <li>Körperpflege, Schlaf, Essen, Medikamente</li>
+        <li>„Gegen Emotionen handeln“</li>
+        <li>Positive Ereignisse planen</li>
+        <li>“ABC-Modell” (Auslöser – Bewertung – Konsequenz)</li>
+        <li>Dankbarkeit und Sinn</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">4. Zwischenmenschliche Fertigkeiten</div>
+    <div class="accordion-content">
+      <p><strong>Ziel:</strong> Bedürfnisse durchsetzen, ohne Beziehungen zu gefährden.</p>
+      <p><strong>DEAR MAN (für Durchsetzung):</strong></p>
+      <ul>
+        <li>Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate</li>
+      </ul>
+      <p><strong>GIVE (für Beziehungspflege):</strong></p>
+      <ul>
+        <li>Gentle, Interested, Validate, Easy manner</li>
+      </ul>
+      <p><strong>FAST (für Selbstachtung):</strong></p>
+      <ul>
+        <li>Fair, Apologies (not), Stick to values, Truthful</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accordion-section">
+    <div class="accordion-header">5. Selbstwert & Selbstmitgefühl</div>
+    <div class="accordion-content">
+      <p><strong>Ziel:</strong> Selbstakzeptanz und Mitgefühl fördern.</p>
+      <ul>
+        <li>Selbstmitgefühlsübungen nach Kristin Neff</li>
+        <li>„Loving Kindness Meditation“</li>
+        <li>Sich selbst wie einen guten Freund behandeln</li>
+        <li>Innere Kritiker entlarven</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+       
+      </div>
+    </section>
+    
+        <div class="footer-placeholder"></div>
+
+    <!-- Footer Navigation
+    <footer class="footer-nav">
+      <a href="search.html" class="nav-item">
+        <img src="../assets/icons/search-inactive.png" alt="Search" />
+      </a>
+      <a href="../index.html" class="nav-item active">
+        <img src="../assets/icons/home-active.png" alt="Home" />
+      </a>
+      <a href="add.html" class="nav-item">
+        <img src="../assets/icons/plus-inactive.png" alt="Add" />
+      </a>
+      <a href="suggestions.html" class="nav-item">
+        <img src="../assets/icons/suggestion-inactive.png" alt="Suggestions" />
+      </a>
+      <a href="settings.html" class="nav-item">
+        <img src="../assets/icons/settings-inactive.png" alt="Settings" />
+      </a>
+    </footer>-->
+
+  </div>
+    <script src="../js/inject-shared.js"></script>
+  <!-- Script: Akkordeonfunktion -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const headers = document.querySelectorAll('.accordion-header');
+      headers.forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const isOpen = header.classList.contains('open');
+
+          header.classList.toggle('open');
+          content.style.display = isOpen ? 'none' : 'block';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
