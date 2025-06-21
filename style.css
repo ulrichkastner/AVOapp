@@ -5,3 +5,17 @@ body {
     padding: 20px;
     color: #333;
 }
+.vorschalt {
+  text-align: center;
+  margin-top: 20vh;
+}
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
