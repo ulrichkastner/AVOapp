@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safetyplan Swipe</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .app-header {
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #f1f1f1;
+      border-bottom: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .app-header .avatar img {
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .swiper {
+      height: calc(100vh - 60px); /* Höhe abzüglich Header */
+    }
+
+    .swiper-slide {
+      width: 100vw;
+      height: calc(100vh - 60px); /* Höhe abzüglich Header */
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header direkt integriert -->
+  <!--<header class="app-header">
+    <div class="greeting" id="greeting">Hallo Nutzer</div>
+    <div class="avatar">
+      <img src="/assets/images/avatar.jpg" alt="Avatar" id="header-avatar" />
+    </div>
+  </header>-->
+
+  <!-- Swiper mit iframes -->
+  <div class="swiper safetyplan-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><iframe src="/modules/safety/warning.html"></iframe></div>
+      <div class="swiper-slide"><iframe src="/modules/safety/strategies.html"></iframe></div>
+      <div class="swiper-slide"><iframe src="/modules/safety/distraction.html"></iframe></div>
+      <div class="swiper-slide"><iframe src="/modules/safety/support.html"></iframe></div>
+      <div class="swiper-slide"><iframe src="/modules/safety/professional.html"></iframe></div>
+      <div class="swiper-slide"><iframe src="/modules/safety/enviroment.html"></iframe></div>
+      <div class="swiper-slide"><iframe src="/modules/safety/safety-overview.html"></iframe></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.safetyplan-swiper', {
+      direction: 'horizontal',
+      loop: false,
+      slidesPerView: 1,
+      allowTouchMove: true,
+      spaceBetween: 0
+    });
+  </script>
+
+</body>
+</html>

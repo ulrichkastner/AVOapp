@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AVO – Einträge</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/assets/icons/avo-icon-192.png" />
+</head>
+<body>
+  <div class="app-wrapper">
+
+    <div class="header-placeholder"></div>
+
+    <main class="module-overview">
+      <section class="module-grid" style="grid-template-columns: 1fr; gap: 0;">
+        <section class="module-tile" style="padding: 1rem;">
+          <h2>Deine Einträge</h2>
+
+          <label for="tableDate">Datum auswählen:</label>
+          <input type="date" id="tableDate" />
+
+          <table class="entry-table">
+            <thead>
+              <tr>
+                <th>Datum</th>
+                <th>Uhrzeit</th>
+                <th>Anspannung</th>
+                <th>Notiz</th>
+                <th>Aktion</th>
+              </tr>
+            </thead>
+            <tbody id="entryTableBody">
+              <!-- dynamisch -->
+            </tbody>
+          </table>
+
+          <button onclick="window.location.href='distresscurve.html'" style="margin-top: 1rem;">
+            Zurück zur Kurve
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <div class="footer-placeholder"></div>
+
+  </div>
+
+  <script src="/js/inject-shared.js"></script>
+  <script src="/js/entries.js"></script>
+</body>
+</html>

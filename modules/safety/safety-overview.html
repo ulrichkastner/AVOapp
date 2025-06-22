@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Safety Plan Übersicht</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/assets/icons/avo-icon-192.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/js/sw.js')
+        .then(reg => console.log('✅ SW registriert:', reg.scope))
+        .catch(err => console.warn('❌ Fehler:', err));
+    }
+  </script>
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="header-placeholder"></div>
+
+    <main class="module-content">
+      <h2>Mein Safety Plan</h2>
+
+      <div class="safety-section">
+        <h3><a href="warning.html">1. Warnzeichen</a></h3>
+        <ul id="overview-warnings" class="safety-list"></ul>
+      </div>
+
+      <div class="safety-section">
+        <h3><a href="strategies.html">2. Bewältigungsstrategien</a></h3>
+        <ul id="overview-strategies" class="safety-list"></ul>
+      </div>
+
+      <div class="safety-section">
+        <h3><a href="distraction.html">3. Ablenkung (Distraction)</a></h3>
+        <ul id="overview-distractions" class="safety-list"></ul>
+      </div>
+
+      <div class="safety-section">
+        <h3><a href="support.html">4. Soziale Aktivitäten & Orte (Support)</a></h3>
+        <ul id="overview-support" class="safety-list"></ul>
+      </div>
+
+      <div class="safety-section">
+        <h3><a href="professional.html">5. Professionelle Hilfe</a></h3>
+        <ul id="overview-professional" class="safety-list"></ul>
+      </div>
+
+      <div class="safety-section">
+        <h3><a href="enviroment.html">6. Unterstützendes Umfeld (Enviroment)</a></h3>
+        <ul id="overview-enviroment" class="safety-list"></ul>
+      </div>
+    </main>
+
+
+    <div class="footer-placeholder"></div>
+  </div>
+
+  <script>
+    function loadList(id, storageKey) {
+      const container = document.getElementById(id);
+      container.innerHTML = "";
+      const items = JSON.parse(localStorage.getItem(storageKey)) || [];
+      items.forEach((entry) => {
+        const li = document.createElement("li");
+        li.textContent = entry;
+        container.appendChild(li);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadList("overview-strategies", "avoStrategies");
+      loadList("overview-distractions", "avoDistractions");
+      loadList("overview-support", "avoSupport");
+      loadList("overview-professional", "avoProfessional");
+      loadList("overview-enviroment", "avoEnviroment");
+      loadList("overview-warnings", "avoWarningSigns");
+    });
+  </script>
+
+  <script src="/js/inject-shared.js"></script>
+  <script src="/js/swipe-nav.js"></script>
+</body>
+</html>
